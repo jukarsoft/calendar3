@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>datepicker</title>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<style type="text/css">
+	    div.widget {
+	      width: 400px;
+	      height: 400px;
+	      border: 1px solid black;
+	      padding: 20px;
+	      margin: auto;
+	    }
+  	</style>
+	
+</head>
+<body>
+	
+	<div class="widget">
+		<h3>ejemplo de datepicker</h3>
+		<p>Fecha:</p>
+		<input type="text" id="datepicker">
+		<span class="ui-icon  ui-icon-calendar"></span>
+	</div>
+	
+	
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/datepicker-es.js"></script>
+	<script>
+		$(function () {
+			$.datepicker.setDefaults($.datepicker.regional["es"]);
+			$("#datepicker").datepicker({
+				firstDay: 1,
+				altField: "#alternate",
+				showWeek: true,
+				changeMonth: true,
+				changeYear: true,
+				// rango absoluto
+				// yearRange: "2019:2050",
+				// rango relativo
+				yearRange: "-0:+10",
+				defaultDate: "+1d",
+				// fijación rango de fecha min y max (relativa)
+				// minDate: "-10D",
+				// maxDate: "+1M, -10D",
+				// fijación rango de fecha min y max (fijas)
+				minDate: "15/10/2019",
+				maxDate: "15/12/2020",
+				showButtonPanel: true,
+				onSelect: function (date) {
+				alert(date)
+				},
+				numberOfMonths: [ 1, 1 ],
+				// showOn: "button",
+                buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                buttonImageOnly: false
+			});
+
+		})
+		
+	</script>
+</body>
+</html>
